@@ -1,23 +1,24 @@
 /* Ultimate profile by Taker */
-#include "modes/Ultimate.hpp"
+#include "modes/UltimateUSB.hpp"
 
 #define ANALOG_STICK_MIN 28
 #define ANALOG_STICK_NEUTRAL 128
 #define ANALOG_STICK_MAX 228
 
-Ultimate::Ultimate(socd::SocdType socd_type) {
-    _socd_pair_count = 4;
+UltimateUSB::UltimateUSB(socd::SocdType socd_type) {
+    _socd_pair_count = 5;
     _socd_pairs = new socd::SocdPair[_socd_pair_count]{
         socd::SocdPair{&InputState::left,    &InputState::right,   socd_type},
         socd::SocdPair{ &InputState::down,   &InputState::up,      socd_type},
+        socd::SocdPair{ &InputState::down,   &InputState::up2,     socd_type},
         socd::SocdPair{ &InputState::c_left, &InputState::c_right, socd_type},
         socd::SocdPair{ &InputState::c_down, &InputState::c_up,    socd_type},
     };
 }
 
-void Ultimate::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
-    outputs.a = inputs.a;
-    outputs.b = inputs.b;
+void UltimateUSB::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
+    outputs.b = inputs.a;
+    outputs.a = inputs.b;
     outputs.x = inputs.x;
     outputs.y = inputs.y;
     outputs.buttonL = inputs.lightshield;
@@ -43,7 +44,7 @@ void Ultimate::UpdateDigitalOutputs(InputState &inputs, OutputState &outputs) {
     }
 }
 
-void Ultimate::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
+void UltimateUSB::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
     // Coordinate calculations to make modifier handling simpler.
     UpdateDirections(
         inputs.left,
@@ -272,7 +273,7 @@ void Ultimate::UpdateAnalogOutputs(InputState &inputs, OutputState &outputs) {
     }
 
     // Shut off C-stick when using D-Pad layer.
-    if ((inputs.mod_x && inputs.mod_y) || inputs.nunchuk_c) {
+    if ((inputs.mod_x && inputs.mod_y) || inputs.up2) {
         outputs.rightStickX = 128;
         outputs.rightStickY = 128;
     }
