@@ -5,9 +5,11 @@
 #include "modes/DefaultKeyboardMode.hpp"
 #include "modes/FgcMode.hpp"
 #include "modes/Melee20Button.hpp"
+#include "modes/Melee20ButtonWASD.hpp"
 #include "modes/ProjectM.hpp"
 #include "modes/RivalsOfAether.hpp"
 #include "modes/Ultimate.hpp"
+#include "modes/UltimateUSB.hpp"
 
 extern KeyboardMode *current_kb_mode;
 
@@ -48,10 +50,18 @@ void select_mode(CommunicationBackend *backend) {
             );
         } else if (inputs.down) {
             set_mode(backend, new Ultimate(socd::SOCD_2IP));
+        } else if (inputs.up2) {
+            set_mode(backend, new UltimateUSB(socd::SOCD_2IP)); 
         } else if (inputs.right) {
             set_mode(backend, new FgcMode(socd::SOCD_NEUTRAL, socd::SOCD_NEUTRAL));
         } else if (inputs.b) {
             set_mode(backend, new RivalsOfAether(socd::SOCD_2IP));
+        } else if (inputs.x) {
+            set_mode(
+                backend, 
+                new Melee20ButtonWASD(socd::SOCD_2IP_NO_REAC, { .crouch_walk_os = false }
+                )
+            );
         }
     } else if (inputs.mod_y && !inputs.mod_x && inputs.start) {
         if (inputs.l) {
