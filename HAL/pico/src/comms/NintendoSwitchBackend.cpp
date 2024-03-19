@@ -112,10 +112,10 @@ void NintendoSwitchBackend::SendReport() {
     UpdateOutputs();
 
     // Digital outputs
-    _report.y = _outputs.y;
-    _report.b = _outputs.b;
-    _report.a = _outputs.a;
-    _report.x = _outputs.x;
+    _report.y = _outputs.x;
+    _report.b = _outputs.a;
+    _report.a = _outputs.b;
+    _report.x = _outputs.y;
     _report.l = _outputs.buttonL;
     _report.r = _outputs.buttonR;
     _report.zl = _outputs.triggerLDigital;
