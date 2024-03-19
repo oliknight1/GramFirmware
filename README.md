@@ -2,7 +2,8 @@
 
 This is a branch of HayBox specifically made for [GRAM](https://gramctrl.com/) controllers. 
 Since the GRAM has a second Up input in it's WASD layout, most changes were made to accomadate that. 
-In all default modes, Up2 can be used as a D-Pad toggle for taunting. Melee20ButtonWASD uses Up2 as the up input, and the default Up as a D-Pad toggle. 
+In all default modes, Up2 can be used as a D-Pad toggle for taunting. 
+Melee WASD Mode (Mod X + X + Start) uses Up2 as the up input, and the default Up as a D-Pad toggle. 
 
 Additionally, improvements were made to the FGC Mode and the Switch backend used to connect to consoles with the [Brook Wingman FGC](https://www.brookaccessory.com/products/wingmanfgc/index.html) adapter. 
 
