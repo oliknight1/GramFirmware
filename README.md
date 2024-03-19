@@ -23,7 +23,7 @@ You should be good to go!
 
 
 
-Original ReadMe below:
+## Original ReadMe below:
 
 HayBox is a modular, cross-platform firmware for digital or mixed analog/digital controllers, primarily targeted at [B0XX](https://b0xx.com)-style controllers.
 
