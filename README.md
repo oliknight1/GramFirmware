@@ -9,7 +9,7 @@ Additionally, improvements were made to the FGC Mode and the Switch backend used
 Pressing Mod Y in FGC Mode will change Start to the Home Button and Midshield to the Select button. It also turns WASD and C-Stick inputs into analog inputs (helpful for rotating the camera in many online lobbies or singleplayer modes.)
  
  
-Guide to connect to a PS4 / PS5 - 
+## Guide to connect to a PS4 / PS5
 You need a Brook Wingman to get it to work, otherwise the console won't recognize the controller. 
  
 Hold the X button when you plug in to get the Nintendo Switch Backend.
