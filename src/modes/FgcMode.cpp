@@ -1,8 +1,8 @@
 #include "modes/FgcMode.hpp"
 
-#define ANALOG_STICK_MIN 0
+#define ANALOG_STICK_MIN 28
 #define ANALOG_STICK_NEUTRAL 128
-#define ANALOG_STICK_MAX 255
+#define ANALOG_STICK_MAX 228
 
 FgcMode::FgcMode(socd::SocdType horizontal_socd, socd::SocdType vertical_socd) {
     _socd_pair_count = 6;
