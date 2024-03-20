@@ -5,7 +5,7 @@
 #define ANALOG_STICK_MAX 228
 
 FgcMode::FgcMode(socd::SocdType horizontal_socd, socd::SocdType vertical_socd) {
-    _socd_pair_count = 6;
+    _socd_pair_count = 7;
     _socd_pairs = new socd::SocdPair[_socd_pair_count]{
         socd::SocdPair{&InputState::left,   &InputState::right, horizontal_socd         },
  /* Mod X override C-Up input if both are pressed. Without this, neutral SOCD doesn't work
