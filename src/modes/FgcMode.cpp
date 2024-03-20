@@ -14,6 +14,7 @@ FgcMode::FgcMode(socd::SocdType horizontal_socd, socd::SocdType vertical_socd) {
   input instead of neutral. */
         socd::SocdPair{ &InputState::mod_x, &InputState::c_up,  socd::SOCD_DIR1_PRIORITY},
         socd::SocdPair{ &InputState::mod_x, &InputState::up2,   socd::SOCD_DIR1_PRIORITY},
+        socd::SocdPair{ &InputState::c_up,  &InputState::up2,   socd::SOCD_DIR1_PRIORITY},
         socd::SocdPair{ &InputState::down,  &InputState::mod_x, vertical_socd           },
         socd::SocdPair{ &InputState::down,  &InputState::up2,   vertical_socd           },
         socd::SocdPair{ &InputState::down,  &InputState::c_up,  vertical_socd           },
