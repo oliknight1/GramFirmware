@@ -278,3 +278,4 @@ void Melee20ButtonWASD::UpdateAnalogOutputs(InputState &inputs, OutputState &out
         outputs.leftStickY = inputs.nunchuk_y;
     }
 }
+
